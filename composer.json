@@ -1,0 +1,24 @@
+{
+  "name": "o-tasha/sberbank-internet-acquiring-api-client",
+  "description": "Sberbank Internet Acquiring API Client",
+  "type": "library",
+  "license": "MIT",
+  "keywords": ["sberbank", "acquiring", "api", "client", "rest"],
+  "authors": [
+    {
+      "name": "o-tasha",
+      "email": "nata.borsh2007@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "ext-json": "*",
+    "lib-curl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "OTasha\\SberbankInternetAcquiringApiClient\\": "src/"
+    }
+  },
+  "minimum-stability": "stable"
+}
