@@ -23,7 +23,7 @@ class ClientFactory
         switch ($interfaceType) {
             case self::REST:
                 $httpClient = new HttpClient();
-                return new RESTClent($userName, $password, $httpClient, $testMode);
+                return new RESTClient($userName, $password, $httpClient, $testMode);
             case self::SOAP:
                 throw new \Exception('This type of interface is not yet supported');
             default:

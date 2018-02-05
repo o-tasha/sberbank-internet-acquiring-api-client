@@ -32,6 +32,7 @@ class RESTClient extends Client
     {
         $this->userName = $userName;
         $this->password = $password;
+        $this->httpClient = $httpClient;
         if ($testMode === false) {
             $this->restUrl = self::REST_URL;
         } else {
@@ -44,7 +45,7 @@ class RESTClient extends Client
      *
      * @return array
      */
-    public function registerOrder($orderNumber, $amount, $returnUrl)
+    public function registerOrder($orderNumber, $amount, $returnUrl, $failUrl = null)
     {
         $requestUrl = $this->restUrl . 'register.do';
 
@@ -55,6 +56,10 @@ class RESTClient extends Client
             'amount' => $amount,
             'returnUrl' => $returnUrl,
         ];
+
+        if(!empty($failUrl)) {
+            $data['failUrl'] = $failUrl;
+        }
 
         $headers = [
             'Cache-Control: no-cache',
